@@ -8,6 +8,24 @@ class ShowSnackbarView extends StatefulWidget {
 }
 
 class _ShowSnackbarViewState extends State<ShowSnackbarView> {
+  _showMessageOne() {
+    ScaffoldMessenger.of(context).showSnackBar(
+      const SnackBar(
+        content: Text('Show message 1'),
+        duration: Duration(seconds: 3),
+      ),
+    );
+  }
+
+  _showMessageTwo() {
+    ScaffoldMessenger.of(context).showSnackBar(
+      const SnackBar(
+        content: Text('Show message 2'),
+        duration: Duration(seconds: 3),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -15,12 +33,12 @@ class _ShowSnackbarViewState extends State<ShowSnackbarView> {
           child: Column(
         children: [
           ElevatedButton(
-            onPressed: () => {},
-            child: const Text("Show message 1"),
+            onPressed: () => _showMessageOne(),
+            child: const Text("Show Message 1"),
           ),
           ElevatedButton(
-            onPressed: () => {},
-            child: const Text("Show message 2"),
+            onPressed: () => {_showMessageTwo()},
+            child: const Text("Show Message 2"),
           ),
         ],
       )),
