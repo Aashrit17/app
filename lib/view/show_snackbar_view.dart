@@ -11,6 +11,7 @@ class _ShowSnackbarViewState extends State<ShowSnackbarView> {
   _showMessageOne() {
     ScaffoldMessenger.of(context).showSnackBar(
       const SnackBar(
+        backgroundColor: Colors.green,
         content: Text('Show message 1'),
         duration: Duration(seconds: 3),
       ),
